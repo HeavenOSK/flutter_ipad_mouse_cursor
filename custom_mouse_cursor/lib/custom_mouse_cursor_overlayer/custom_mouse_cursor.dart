@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomCursor extends StatelessWidget {
-  const CustomCursor();
+class CustomMouseCursor extends StatelessWidget {
+  const CustomMouseCursor();
 
   static const double radius = 30;
 
