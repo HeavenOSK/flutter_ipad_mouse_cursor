@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/all.dart';
 
 import 'custom_mouse_cursor.dart';
+import 'custom_mouse_cursor_controller.dart';
 
-class PositionedCursor extends HookWidgetWidget {
+class PositionedCursor extends HookWidget {
   const PositionedCursor({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final controller = useProvider(customMouseCursorController);
+    final cursorState = useProvider(customMouseCursorController.state);
 
-    final pos = Offset(0, 0);
-    return Positioned(
-      top: pos.dy - CustomMouseCursor.radius / 2,
-      left: pos.dx - CustomMouseCursor.radius / 2,
-      child: const CustomMouseCursor(),
+    return cursorState.when(
+      none: () => const SizedBox.shrink(),
+      visible: (pos) => Positioned(
+        top: pos.dy - CustomMouseCursor.radius / 2,
+        left: pos.dx - CustomMouseCursor.radius / 2,
+        child: const CustomMouseCursor(),
+      ),
     );
   }
 }

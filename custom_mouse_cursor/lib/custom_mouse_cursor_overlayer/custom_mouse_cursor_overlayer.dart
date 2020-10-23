@@ -6,8 +6,8 @@ import 'package:hooks_riverpod/all.dart';
 import 'custom_mouse_cursor_controller.dart';
 import 'positioned_cursor.dart';
 
-class CustomMouseRegion extends HookWidget {
-  const CustomMouseRegion({
+class CustomMouseCursorOverlayer extends HookWidget {
+  const CustomMouseCursorOverlayer({
     Key key,
     @required this.child,
   }) : super(key: key);

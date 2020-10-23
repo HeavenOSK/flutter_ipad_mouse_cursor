@@ -13,14 +13,10 @@ Widget counterPage() {
   final counter = useProvider(counterControllerProvider.state);
   return Scaffold(
     appBar: AppBar(
-      title: const Text('Counter Page'),
+      title: Text('Counter Page'),
     ),
     body: Center(
       child: Text(counter.count.toString()),
-    ),
-    floatingActionButton: FloatingActionButton(
-      onPressed: counterController.increment,
-      child: const Icon(Icons.add),
     ),
   );
 }
