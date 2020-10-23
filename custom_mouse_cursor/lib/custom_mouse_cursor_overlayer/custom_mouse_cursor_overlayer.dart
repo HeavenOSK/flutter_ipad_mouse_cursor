@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/all.dart';
 
-import 'custom_mouse_cursor_controller.dart';
+import 'controller/custom_mouse_cursor_controller.dart';
 import 'positioned_cursor.dart';
 
 class CustomMouseCursorOverlayer extends HookWidget {
