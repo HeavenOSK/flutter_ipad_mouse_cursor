@@ -1,0 +1,9 @@
+{
+  "@@locale": "messages",
+  "@@last_modified": "2020-02-23T10:02:09.703774",
+  "hello": "Hello",
+  "@hello": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

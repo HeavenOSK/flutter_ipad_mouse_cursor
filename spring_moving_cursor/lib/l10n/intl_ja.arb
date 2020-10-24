@@ -1,0 +1,9 @@
+{
+  "@@locale": "ja",
+  "@@last_modified": "2020-02-23T10:00:14.459388",
+  "hello": "こんにちは",
+  "@hello": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
