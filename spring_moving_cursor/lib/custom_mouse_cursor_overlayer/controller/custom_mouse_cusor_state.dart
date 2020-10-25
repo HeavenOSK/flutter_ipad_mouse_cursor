@@ -8,6 +8,7 @@ abstract class CustomMouseCursorState with _$CustomMouseCursorState {
   factory CustomMouseCursorState({
     @nullable Offset realPosition,
     @nullable Offset virtualPosition,
+    @Default(false) bool useVirtualPosition,
   }) = _CustomMouseCursorState;
 
   @late

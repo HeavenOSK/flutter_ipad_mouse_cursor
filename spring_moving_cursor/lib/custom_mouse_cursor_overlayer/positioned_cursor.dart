@@ -13,9 +13,12 @@ class PositionedCursor extends HookWidget {
     if (!cursorState.visible) {
       return const SizedBox.shrink();
     } else {
+      final position = cursorState.useVirtualPosition
+          ? cursorState.virtualPosition
+          : cursorState.realPosition;
       return Positioned(
-        top: cursorState.realPosition.dy - CustomMouseCursor.radius / 2,
-        left: cursorState.realPosition.dx - CustomMouseCursor.radius / 2,
+        top: position.dy - CustomMouseCursor.radius / 2,
+        left: position.dx - CustomMouseCursor.radius / 2,
         child: const CustomMouseCursor(),
       );
     }
