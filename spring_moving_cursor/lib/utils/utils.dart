@@ -1,2 +1,2 @@
-export 'frame_update_layer.dart';
+export 'frame_updater.dart';
 export 'loop_animation_controller.dart';

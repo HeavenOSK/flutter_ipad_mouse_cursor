@@ -18,7 +18,7 @@ class CustomMouseCursorOverlayer extends HookWidget {
   Widget build(BuildContext context) {
     final controller = useProvider(customMouseCursorController);
 
-    return FrameUpdateLayer(
+    return FrameUpdater(
       onUpdate: () {
         controller.updateVirtualPosition();
       },
