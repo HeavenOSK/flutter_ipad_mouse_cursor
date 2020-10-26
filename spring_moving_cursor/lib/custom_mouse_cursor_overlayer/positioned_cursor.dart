@@ -9,13 +9,15 @@ class PositionedCursor extends HookWidget {
   const PositionedCursor({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final cursorState = useProvider(customMouseCursorController.state);
-    if (!cursorState.visible) {
+    final visible = useProvider(
+      customMouseCursorController.state.select((s) => s.visible),
+    );
+    final position = useProvider(
+      customMouseCursorController.state.select((s) => s.virtualPosition),
+    );
+    if (!visible) {
       return const SizedBox.shrink();
     } else {
-      final position = cursorState.useVirtualPosition
-          ? cursorState.virtualPosition
-          : cursorState.actualPosition;
       return Positioned(
         top: position.dy - CustomMouseCursor.radius / 2,
         left: position.dx - CustomMouseCursor.radius / 2,

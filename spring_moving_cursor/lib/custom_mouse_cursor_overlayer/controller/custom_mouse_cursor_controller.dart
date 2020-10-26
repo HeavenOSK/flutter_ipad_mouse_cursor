@@ -26,14 +26,18 @@ class CustomMouseCursorController
   }
 
   void updateVirtualPosition() {
-    state = state.copyWith(
-      virtualPosition: state.visible
-          ? computeNextVirtualPosition(
-              actualPosition: state.actualPosition,
-              virtualPosition: state.virtualPosition,
-            )
-          : null,
-    );
+    if (!state.visible) {
+      state = state.copyWith(virtualPosition: null);
+    } else {
+      state = state.copyWith(
+        virtualPosition: state.useVirtualPosition
+            ? computeNextVirtualPosition(
+                actualPosition: state.actualPosition,
+                virtualPosition: state.virtualPosition,
+              )
+            : state.actualPosition,
+      );
+    }
   }
 
   void exit() {
