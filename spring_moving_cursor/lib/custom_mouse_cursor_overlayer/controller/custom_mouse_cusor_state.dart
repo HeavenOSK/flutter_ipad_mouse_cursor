@@ -6,11 +6,11 @@ part 'custom_mouse_cusor_state.freezed.dart';
 @freezed
 abstract class CustomMouseCursorState with _$CustomMouseCursorState {
   factory CustomMouseCursorState({
-    @nullable Offset realPosition,
+    @nullable Offset actualPosition,
     @nullable Offset virtualPosition,
     @Default(false) bool useVirtualPosition,
   }) = _CustomMouseCursorState;
 
   @late
-  bool get visible => realPosition != null;
+  bool get visible => actualPosition != null;
 }

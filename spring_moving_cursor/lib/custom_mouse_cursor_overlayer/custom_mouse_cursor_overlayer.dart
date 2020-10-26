@@ -26,7 +26,7 @@ class CustomMouseCursorOverlayer extends HookWidget {
         // Uncomment following code if you want to hide cursor.
         // cursor: SystemMouseCursors.none,
         onHover: (event) {
-          controller.updateRealPosition(event.position);
+          controller.updateActualPosition(event.position);
         },
         onExit: (_) => controller.exit(),
         child: Stack(

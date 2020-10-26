@@ -15,7 +15,7 @@ class PositionedCursor extends HookWidget {
     } else {
       final position = cursorState.useVirtualPosition
           ? cursorState.virtualPosition
-          : cursorState.realPosition;
+          : cursorState.actualPosition;
       return Positioned(
         top: position.dy - CustomMouseCursor.radius / 2,
         left: position.dx - CustomMouseCursor.radius / 2,

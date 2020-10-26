@@ -15,11 +15,11 @@ class _$CustomMouseCursorStateTearOff {
 
 // ignore: unused_element
   _CustomMouseCursorState call(
-      {@nullable Offset realPosition,
+      {@nullable Offset actualPosition,
       @nullable Offset virtualPosition,
       bool useVirtualPosition = false}) {
     return _CustomMouseCursorState(
-      realPosition: realPosition,
+      actualPosition: actualPosition,
       virtualPosition: virtualPosition,
       useVirtualPosition: useVirtualPosition,
     );
@@ -33,7 +33,7 @@ const $CustomMouseCursorState = _$CustomMouseCursorStateTearOff();
 /// @nodoc
 mixin _$CustomMouseCursorState {
   @nullable
-  Offset get realPosition;
+  Offset get actualPosition;
   @nullable
   Offset get virtualPosition;
   bool get useVirtualPosition;
@@ -47,7 +47,7 @@ abstract class $CustomMouseCursorStateCopyWith<$Res> {
           $Res Function(CustomMouseCursorState) then) =
       _$CustomMouseCursorStateCopyWithImpl<$Res>;
   $Res call(
-      {@nullable Offset realPosition,
+      {@nullable Offset actualPosition,
       @nullable Offset virtualPosition,
       bool useVirtualPosition});
 }
@@ -63,14 +63,14 @@ class _$CustomMouseCursorStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object realPosition = freezed,
+    Object actualPosition = freezed,
     Object virtualPosition = freezed,
     Object useVirtualPosition = freezed,
   }) {
     return _then(_value.copyWith(
-      realPosition: realPosition == freezed
-          ? _value.realPosition
-          : realPosition as Offset,
+      actualPosition: actualPosition == freezed
+          ? _value.actualPosition
+          : actualPosition as Offset,
       virtualPosition: virtualPosition == freezed
           ? _value.virtualPosition
           : virtualPosition as Offset,
@@ -89,7 +89,7 @@ abstract class _$CustomMouseCursorStateCopyWith<$Res>
       __$CustomMouseCursorStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@nullable Offset realPosition,
+      {@nullable Offset actualPosition,
       @nullable Offset virtualPosition,
       bool useVirtualPosition});
 }
@@ -107,14 +107,14 @@ class __$CustomMouseCursorStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object realPosition = freezed,
+    Object actualPosition = freezed,
     Object virtualPosition = freezed,
     Object useVirtualPosition = freezed,
   }) {
     return _then(_CustomMouseCursorState(
-      realPosition: realPosition == freezed
-          ? _value.realPosition
-          : realPosition as Offset,
+      actualPosition: actualPosition == freezed
+          ? _value.actualPosition
+          : actualPosition as Offset,
       virtualPosition: virtualPosition == freezed
           ? _value.virtualPosition
           : virtualPosition as Offset,
@@ -128,14 +128,14 @@ class __$CustomMouseCursorStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_CustomMouseCursorState implements _CustomMouseCursorState {
   _$_CustomMouseCursorState(
-      {@nullable this.realPosition,
+      {@nullable this.actualPosition,
       @nullable this.virtualPosition,
       this.useVirtualPosition = false})
       : assert(useVirtualPosition != null);
 
   @override
   @nullable
-  final Offset realPosition;
+  final Offset actualPosition;
   @override
   @nullable
   final Offset virtualPosition;
@@ -150,23 +150,23 @@ class _$_CustomMouseCursorState implements _CustomMouseCursorState {
   bool get visible {
     if (_didvisible == false) {
       _didvisible = true;
-      _visible = realPosition != null;
+      _visible = actualPosition != null;
     }
     return _visible;
   }
 
   @override
   String toString() {
-    return 'CustomMouseCursorState(realPosition: $realPosition, virtualPosition: $virtualPosition, useVirtualPosition: $useVirtualPosition, visible: $visible)';
+    return 'CustomMouseCursorState(actualPosition: $actualPosition, virtualPosition: $virtualPosition, useVirtualPosition: $useVirtualPosition, visible: $visible)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CustomMouseCursorState &&
-            (identical(other.realPosition, realPosition) ||
+            (identical(other.actualPosition, actualPosition) ||
                 const DeepCollectionEquality()
-                    .equals(other.realPosition, realPosition)) &&
+                    .equals(other.actualPosition, actualPosition)) &&
             (identical(other.virtualPosition, virtualPosition) ||
                 const DeepCollectionEquality()
                     .equals(other.virtualPosition, virtualPosition)) &&
@@ -178,7 +178,7 @@ class _$_CustomMouseCursorState implements _CustomMouseCursorState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(realPosition) ^
+      const DeepCollectionEquality().hash(actualPosition) ^
       const DeepCollectionEquality().hash(virtualPosition) ^
       const DeepCollectionEquality().hash(useVirtualPosition);
 
@@ -190,13 +190,13 @@ class _$_CustomMouseCursorState implements _CustomMouseCursorState {
 
 abstract class _CustomMouseCursorState implements CustomMouseCursorState {
   factory _CustomMouseCursorState(
-      {@nullable Offset realPosition,
+      {@nullable Offset actualPosition,
       @nullable Offset virtualPosition,
       bool useVirtualPosition}) = _$_CustomMouseCursorState;
 
   @override
   @nullable
-  Offset get realPosition;
+  Offset get actualPosition;
   @override
   @nullable
   Offset get virtualPosition;

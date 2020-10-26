@@ -21,15 +21,15 @@ class CustomMouseCursorController
     );
   }
 
-  void updateRealPosition(Offset current) {
-    state = state.copyWith(realPosition: current);
+  void updateActualPosition(Offset current) {
+    state = state.copyWith(actualPosition: current);
   }
 
   void updateVirtualPosition() {
     state = state.copyWith(
       virtualPosition: state.visible
           ? computeNextVirtualPosition(
-              realPosition: state.realPosition,
+              actualPosition: state.actualPosition,
               virtualPosition: state.virtualPosition,
             )
           : null,
@@ -38,24 +38,24 @@ class CustomMouseCursorController
 
   void exit() {
     state = state.copyWith(
-      realPosition: null,
+      actualPosition: null,
       virtualPosition: null,
     );
   }
 }
 
 Offset computeNextVirtualPosition({
-  @required Offset realPosition,
+  @required Offset actualPosition,
   Offset virtualPosition,
 }) {
   if (virtualPosition == null) {
-    return realPosition;
+    return actualPosition;
   }
 
   const spring = 0.3; // バネ係数
   const easing = 0.9; // 収束値
 
-  final diff = realPosition - virtualPosition;
+  final diff = actualPosition - virtualPosition;
 
   final speedX = (diff.dx * spring) * easing;
   final speedY = (diff.dy * spring) * easing;
