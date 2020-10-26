@@ -15,7 +15,7 @@ class Home extends HookWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          useVirtualPosition ? 'Spring Simulation' : 'Real Position',
+          useVirtualPosition ? 'Spring Simulation' : 'Actual Position',
         ),
         backgroundColor:
             useVirtualPosition ? Colors.deepPurpleAccent : Colors.blue,
