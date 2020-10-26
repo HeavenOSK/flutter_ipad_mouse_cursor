@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.6.0"
+  arrow_path:
+    dependency: "direct main"
+    description:
+      name: arrow_path
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   async:
     dependency: transitive
     description:

@@ -20,6 +20,7 @@ dependencies:
   gap: any
   mono_kit: any
   adaptive_dialog: ^0.7.5+3
+  arrow_path: ^1.0.0
   # Firebase
 #  firestore_ref: any
 #  firebase_auth: any
