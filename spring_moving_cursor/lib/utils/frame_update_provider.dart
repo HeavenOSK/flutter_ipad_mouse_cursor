@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:spring_moving_cursor/utils/utils.dart';
 
-class FrameUpdater extends StatefulWidget {
-  const FrameUpdater({
+class FrameUpdateProvider extends StatefulWidget {
+  const FrameUpdateProvider({
     @required this.child,
     @required this.onUpdate,
     Key key,
@@ -12,10 +12,10 @@ class FrameUpdater extends StatefulWidget {
   final VoidCallback onUpdate;
 
   @override
-  _FrameUpdaterState createState() => _FrameUpdaterState();
+  _FrameUpdateProviderState createState() => _FrameUpdateProviderState();
 }
 
-class _FrameUpdaterState extends State<FrameUpdater>
+class _FrameUpdateProviderState extends State<FrameUpdateProvider>
     with SingleTickerProviderStateMixin {
   LoopAnimationController _loopAnimationController;
   @override
