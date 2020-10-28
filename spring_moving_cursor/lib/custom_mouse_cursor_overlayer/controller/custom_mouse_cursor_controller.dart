@@ -15,6 +15,9 @@ class CustomMouseCursorController
     extends StateNotifier<CustomMouseCursorState> {
   CustomMouseCursorController() : super(CustomMouseCursorState());
 
+  double _speedX = 0;
+  double _speedY = 0;
+
   void toggleUseVirtualPosition() {
     state = state.copyWith(
       useVirtualPosition: !state.useVirtualPosition,
@@ -46,26 +49,27 @@ class CustomMouseCursorController
       virtualPosition: null,
     );
   }
-}
 
-Offset computeNextVirtualPosition({
-  @required Offset actualPosition,
-  Offset virtualPosition,
-}) {
-  if (virtualPosition == null) {
-    return actualPosition;
+  Offset computeNextVirtualPosition({
+    @required Offset actualPosition,
+    Offset virtualPosition,
+  }) {
+    if (virtualPosition == null) {
+      return actualPosition;
+    }
+
+    const spring = 0.3;
+    const easing = 0.5;
+
+    final diff = actualPosition - virtualPosition;
+    _speedX += diff.dx * spring;
+    _speedX *= easing;
+    _speedY += diff.dy * spring;
+    _speedY *= easing;
+
+    return Offset(
+      virtualPosition.dx + _speedX,
+      virtualPosition.dy + _speedY,
+    );
   }
-
-  const spring = 0.3; // バネ係数
-  const easing = 0.9; // 収束値
-
-  final diff = actualPosition - virtualPosition;
-
-  final speedX = (diff.dx * spring) * easing;
-  final speedY = (diff.dy * spring) * easing;
-
-  return Offset(
-    virtualPosition.dx + speedX,
-    virtualPosition.dy + speedY,
-  );
 }
