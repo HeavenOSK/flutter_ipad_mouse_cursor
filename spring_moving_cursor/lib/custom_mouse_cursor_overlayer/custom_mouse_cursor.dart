@@ -16,7 +16,7 @@ class CustomMouseCursor extends StatelessWidget {
           border: Border.all(
             color: const Color.fromRGBO(170, 170, 170, 0.6),
           ),
-          color: const Color.fromRGBO(170, 170, 170, 0.8 - 0.4),
+          color: const Color.fromRGBO(170, 170, 170, 0.2),
         ),
       ),
     );

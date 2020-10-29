@@ -58,8 +58,8 @@ class CustomMouseCursorController
       return actualPosition;
     }
 
-    const spring = 0.3;
-    const easing = 0.5;
+    const spring = 0.32;
+    const easing = 0.45;
 
     final diff = actualPosition - virtualPosition;
     _speedX += diff.dx * spring;
